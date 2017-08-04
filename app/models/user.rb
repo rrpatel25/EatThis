@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validate :password_length
 
   def password
-    @password ||= Bcrypt::Password.new(hashed_password)
+    @password ||= BCrypt::Password.new(hashed_password)
   end
 
   def password=(new_password)
