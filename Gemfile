@@ -12,6 +12,7 @@ gem 'activerecord', '~>5.1.2'
 
 gem 'rake'
 gem 'bcrypt'
+gem 'yelp', require: 'yelp'
 
 gem 'shotgun', '~>0.9.1'
 
