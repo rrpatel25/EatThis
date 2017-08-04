@@ -1,3 +1,3 @@
 get '/selections/new' do
-  erb :'/selections/new'
+  erb :'selections/new'
 end
