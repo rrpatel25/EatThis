@@ -19,12 +19,21 @@
   <title></title>
 </head>
 <body>
-  <header>
-    <div id="main-header">
-      <h1>EatThis</h1>
-      <small>We make the decision, so you don't have to</small>
-    </div>
-  </header>
+
+  <ul>
+  <% if logged_in? %>
+    <li>
+      <form id="logout" method="post" action="/sessions">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Logout" id="logout">
+      </form>
+    </li>
+
+  <% else %>
+    <li><a href="/sessions/new">Login</a></li>
+    <li><a href="/users/new">Register</a></li>
+  <% end %>
+
   <%= yield %>
 </body>
 </html>
