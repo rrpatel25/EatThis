@@ -19,20 +19,26 @@
   <title></title>
 </head>
 <body>
+  <nav>
+    <ul>
+    <% if logged_in? %>
+      <li>
+        <form id="logout" method="post" action="/sessions">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Logout" id="logout">
+        </form>
+      </li>
+      <li>current_user.first_name.downcase</li>
 
-  <ul>
-  <% if logged_in? %>
-    <li>
-      <form id="logout" method="post" action="/sessions">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="Logout" id="logout">
-      </form>
-    </li>
-    <li>current_user.first_name.downcase</li>
+    <% else %>
+      <li><a href="/sessions/new">Login</a></li>
+      <li><a href="/users/new">Register</a></li>
+    <% end %>
+  </ul>
+</nav>
 
-  <% else %>
-    <li><a href="/sessions/new">Login</a></li>
-    <li><a href="/users/new">Register</a></li>
+  <% if @errors %>
+    <%= erb :'_errors', locals: { errors: @errors }, layout: false %>
   <% end %>
 
   <%= yield %>
