@@ -1,30 +1,15 @@
-> **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
+# EatThis
 
-### Purpose
-The Sinatra Skeleton:
+## Summary
+This project was created in order to address two main points. First, the work done within this project is to reinforce and solidify my knowledge and skills of the core technologies and tools learned in DevBootcamp's Phase 2. Along with practicing the development of a full-stack application from scratch, this project was also created to address my inability to pick a restaurant for dining.
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
+The struggle is real when I'm backed up against a corner with a metaphorical knife pointed at me. Friends' questioning eyes awaiting an answer. Sorry friends, but no more. I don't want to decide. You shouldn't have to either, if you don't want to. EatThis will make the decision for you, so you won't have to anymore.
 
-### Quickstart
+**User Story:**
+MVP: As a user, I want to be able to enter a city location into a search bar and press a button, which would go on to return a random restaurant near me. If I have already visited a restaurant, it shouldn't be suggested to me again; this is to ensure my friends and I can try different restaurants and cuisines near my specified location. If a suggested restaurant is one I truly do not wish to go to, either now or ever, I should have the option to press a button that generates a different suggestion. I also want the ability to see all the restaurants I have recently visited, as a way for me to share the cool restaurant with other friends/family.
 
-1.  `bundle install`
-2.  `shotgun config.ru`
-
-As needed, create models & migrations with the `rake` tasks:
-
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
-
-### Contributing
-
-We would love for you to help make the skeleton more awesome, There are three ways to contribute:
-
-1. Ask for a bug fix or enhancement!
-2. Submit a pull request for a bug fix or enhancement!
-3. Code review an open pull request!
-
-Be prepared to give and receive specific, actionable, and kind feedback!
+STRETCH:
+- The ability to filter by food type before suggestion
+- The ability to filter by price range before suggestion
+- The ability to choose how long my recently visited restaurants list is before re-adding those restaurants to the generator again
+- The use of geolocation to track my location and offer a suggestion without me having to specify the city
