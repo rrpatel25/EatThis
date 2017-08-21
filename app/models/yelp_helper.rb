@@ -2,7 +2,7 @@ require "json"
 require "http"
 require "optparse"
 
-class Search
+class YelpHelper
 
   CLIENT_ID = "c9K_BZY2Myb827P0J_XqBQ"
   CLIENT_SECRET = "ci9MIbndpEQGJwOigmLqQnnibOPIvrraWmlAYxJDrX3VNvavEhYYGBz1xuGvmDYa"
@@ -16,8 +16,9 @@ class Search
 
 
   DEFAULT_BUSINESS_ID = "yelp-san-francisco"
-  DEFAULT_TERM = "dinner"
-  DEFAULT_LOCATION = "San Francisco, CA"
+  DEFAULT_TERM = "restaurants"
+  DEFAULT_LOCATION = "Chicago, IL"
+  DEFAULT_OFFSET = 0
   SEARCH_LIMIT = 5
 
 
@@ -28,7 +29,7 @@ class Search
   #   Yelp.client.search('chicago')
   # end
 
-  def bearer_token
+  def self.bearer_token
     return @bearer_token if @bearer_token
     # Put the url together
     url = "#{API_HOST}#{TOKEN_PATH}"
@@ -49,13 +50,15 @@ class Search
     @bearer_token = "#{parsed['token_type']} #{parsed['access_token']}"
   end
 
-  def search(term, location)
+  def self.search(location = DEFAULT_LOCATION)
     url = "#{API_HOST}#{SEARCH_PATH}"
-    # url = "#{API_HOST}#{SEARCH_PATH}"
     params = {
-      term: term,
+      term: DEFAULT_TERM,
       location: location,
-      limit: SEARCH_LIMIT
+      limit: SEARCH_LIMIT,
+      attributes: "id",
+      offset: DEFAULT_OFFSET,
+      open_now: true
     }
 
     response = HTTP.auth(bearer_token).get(url, params: params)
