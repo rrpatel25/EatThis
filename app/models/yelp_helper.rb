@@ -21,6 +21,14 @@ class YelpHelper
   DEFAULT_OFFSET = 0
   SEARCH_LIMIT = 5
 
+  DEFAULT_OPTIONS = {
+      term: DEFAULT_TERM,
+      location: DEFAULT_LOCATION,
+      limit: SEARCH_LIMIT,
+      offset: DEFAULT_OFFSET,
+      open_now: true
+  }
+
 
   # def example
   #   client
@@ -50,18 +58,11 @@ class YelpHelper
     @bearer_token = "#{parsed['token_type']} #{parsed['access_token']}"
   end
 
-  def self.search(location = DEFAULT_LOCATION)
+  def self.search(args = {})
+    options = DEFAULT_OPTIONS.merge(args)
     url = "#{API_HOST}#{SEARCH_PATH}"
-    params = {
-      term: DEFAULT_TERM,
-      location: location,
-      limit: SEARCH_LIMIT,
-      attributes: "id",
-      offset: DEFAULT_OFFSET,
-      open_now: true
-    }
 
-    response = HTTP.auth(bearer_token).get(url, params: params)
+    response = HTTP.auth(bearer_token).get(url, params: options)
     response.parse
   end
 
