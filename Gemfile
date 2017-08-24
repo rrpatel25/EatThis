@@ -14,6 +14,7 @@ gem 'rake'
 gem 'bcrypt'
 gem 'yelp', require: 'yelp'
 gem 'http'
+gem 'database_cleaner'
 
 
 gem 'shotgun', '~>0.9.1'

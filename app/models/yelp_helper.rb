@@ -62,9 +62,10 @@ class YelpHelper
   def self.search(args = {})
     options = DEFAULT_OPTIONS.merge(args)
     url = "#{API_HOST}#{SEARCH_PATH}"
+    user_id = args[:user_id]
 
     response = HTTP.auth(bearer_token).get(url, params: options)
-    Response.new(response.parse).picked_restaurant
+    Response.new(response.parse, user_id).picked_restaurant
   end
 
 end
