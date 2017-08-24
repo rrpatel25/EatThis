@@ -1,9 +1,11 @@
-require '../../../app/models/yelp_helper.rb'
+require 'spec_helper'
 
 describe 'yelp-helper call' do
 
+
   it "returns a yelp hash object" do
-    expect(YelpHelper.search).to be_kind_of(Hash)
+    p YelpHelper.search
+    expect(YelpHelper.search).to be_kind_of(Response)
   end
 
   it "returns a list of businesses" do

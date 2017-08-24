@@ -1,4 +1,4 @@
-class VisitedRestaurants < ActiveRecord::Base
+class VisitedRestaurant < ActiveRecord::Base
 
   validates_presence_of :visitor_id, :restaurant_id
 
