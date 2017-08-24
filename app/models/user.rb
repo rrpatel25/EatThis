@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validate :password_length
 
+  has_many :visited_restaurants, foreign_key: :visitor_id
+
   def password
     @password ||= BCrypt::Password.new(hashed_password)
   end

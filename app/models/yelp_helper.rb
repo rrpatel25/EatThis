@@ -1,6 +1,7 @@
 require "json"
 require "http"
 require "optparse"
+require_relative "response"
 
 class YelpHelper
 
@@ -63,7 +64,7 @@ class YelpHelper
     url = "#{API_HOST}#{SEARCH_PATH}"
 
     response = HTTP.auth(bearer_token).get(url, params: options)
-    response.parse
+    Response.new(response.parse).picked_restaurant
   end
 
 end

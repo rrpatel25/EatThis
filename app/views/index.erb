@@ -1,4 +1,7 @@
 <div id="main-header">
   <h1>EatThis</h1>
   <small>We make the decision, so you don't have to</small>
+  <% if logged_in? %>
+    <%= erb :'_restaurant_selector' %>
+  <% end %>
 </div>
