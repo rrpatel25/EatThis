@@ -20,7 +20,7 @@ class YelpHelper
   DEFAULT_TERM = "restaurants"
   DEFAULT_LOCATION = "Chicago, IL"
   DEFAULT_OFFSET = 0
-  SEARCH_LIMIT = 5
+  SEARCH_LIMIT = 50
 
   DEFAULT_OPTIONS = {
       term: DEFAULT_TERM,
@@ -69,7 +69,7 @@ class YelpHelper
   end
 
   def self.get(restaurant_id)
-    
+
   end
 
 end
