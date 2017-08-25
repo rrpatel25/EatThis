@@ -1,0 +1,14 @@
+<article id="restaurant" class="poem">
+  <div class="restaurant-details">
+    <h1 class="restaurant-title">
+      <a href="/restaurants/<%= restaurant.id %>" class="link-coral"><%= restaurant.name %></a>
+    </h1>
+
+    <p class="restaurant-detail-line"><%= restaurant.address.address1 %></p>
+    <p class="restaurant-detail-line"><%= restaurant.address.address2 %></p>
+    <p class="restaurant-detail-line"><%= restaurant.address.address3 %></p>
+    <p class="restaurant-detail-line"><%= restaurant.address.city %>, <%= restaurant.address.state %> <%= restaurant.address.zip_code %></p><br>
+    <p class="restaurant-detail-line"><%= restaurant.price %> | <%= restaurant.rating %></p>
+    <p class="restaurant-detail-line"><%= restaurant.phone_number %></p>
+  </div>
+</article>

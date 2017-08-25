@@ -25,7 +25,7 @@
     <li><a href="/">home</a></li> |
     <!-- if there is a current user logged in, display first name, link to see visited restaurants, and a logout button -->
     <% if logged_in? %>
-      <!-- <li><a href="/users/<%= current_user.id %>"> --> <%= Hi, current_user.first_name %></a></li> |
+      <!-- <li><a href="/users/<%= current_user.id %>"> --> <%= "Hi, " + current_user.first_name %></a></li> |
       <li><a href="/visited_restaurants/index">my conquered restaurants</a></li> |
       <li><form class="logout-button" method="post" action="/sessions">
           <input type="hidden" name="_method" value="DELETE" />
