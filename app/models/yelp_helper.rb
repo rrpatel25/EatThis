@@ -5,8 +5,8 @@ require_relative "response"
 
 class YelpHelper
 
-  CLIENT_ID = "c9K_BZY2Myb827P0J_XqBQ"
-  CLIENT_SECRET = "ci9MIbndpEQGJwOigmLqQnnibOPIvrraWmlAYxJDrX3VNvavEhYYGBz1xuGvmDYa"
+  CLIENT_ID = ENV['CLIENT_ID']
+  CLIENT_SECRET = ENV['CLIENT_SECRET']
 
   # Constants, do not change these
   API_HOST = "https://api.yelp.com"
