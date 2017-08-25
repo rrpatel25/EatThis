@@ -1,13 +1,135 @@
 html {
   height: 100%;
   background-color: #f2f2f2;
+  /*max-width: 900px;*/
+  margin: 2%;
+}
+
+#eatthis-header {
+  text-decoration: none;
+  color: #990000;
+}
+
+#eatthis-header a{
+  text-decoration: none;
+  color: #990000;
+}
+
+#eatthis-header a:visited{
+  color: #990000;
+  text-decoration: none;
+}
+
+#generator-form {
+  background-color: transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: #990000;
+}
+
+#head-bottom {
+  margin-bottom: 5%;
 }
 
 #main-header {
   font-family: 'Concert One', cursive;
   display: block;
   margin: auto;
+  margin-top: 9.5%;
   color: #990000;
   font-size: 3em;
   text-align: center;
+}
+
+nav {
+  margin-top: 30px;
+  padding: 5px;
+  position: fixed;
+  float: right;
+  top: 0;
+}
+
+nav ul{
+  list-style-type: none;
+  line-height: 15px;
+  text-transform: lowercase;
+}
+
+nav li{
+  display: inline-block;
+  padding-right: 3px;
+}
+
+nav li a{
+  color: #990000;
+  text-decoration: none;
+}
+
+nav li a:hover{
+  font-style: italic;
+}
+
+nav li #logout-button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: #990000;
+}
+
+#logout-button:hover{
+  font-style: italic;
+}
+
+.sm-container{
+  font-family: 'Concert One', cursive;
+  margin: 0 auto;
+  width: 500px;
+  border: 1px solid #990000;
+  margin-top: 100px;
+  padding: 20px;
+  color: #990000;
+}
+
+.sm-container h1, h2, h3, h4, h6{
+  text-align: center;
+}
+
+.sm-container a {
+  color: black;
+  text-decoration: none;
+}
+
+.sm-container p {
+  text-align: center;
+  font-size: 20px;
+}
+
+.sm-container a:visited {
+  color: #990000;
+}
+
+.sm-container a:hover {
+  color: #990000;
+  font-style: italic;
+}
+
+.sm-container form{
+  text-align: center;
+}
+
+.sm-container form label{
+  display: block;
+  padding: 5px;
+}
+
+.sm-container form input {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 7px;
 }
