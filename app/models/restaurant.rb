@@ -1,5 +1,5 @@
 class Restaurant
-  attr_reader :restaurant_id, :name, :is_closed, :rating, :price, :address, :phone_number, :image_url
+  attr_reader :restaurant_id, :name, :is_closed, :rating, :price, :address, :phone_number, :url, :image_url
 
   def initialize(restaurant_info = {})
     @restaurant_id = restaurant_info['id'] || nil # throw error if id is missing
@@ -9,6 +9,7 @@ class Restaurant
     @price = restaurant_info['price'] || 'n/a'
     @address = Address.new(restaurant_info['location']) || 'n/a'
     @phone_number = restaurant_info['display_phone'] || 'n/a'
+    @url = restaurant_info['url'] || 'n/a'
     @image_url = restaurant_info['image_url']
   end
 

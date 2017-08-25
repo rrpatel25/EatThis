@@ -16,7 +16,8 @@ function generateRestaurantListener() {
     });
 
     promise.done(function(response) {
-      $(".error_messages").remove()
+      $(".error_messages").remove();
+      $(".restaurant-details").hide();
       $buttonForm.hide();
       $("#main-header").find("small").append(response);
     });
