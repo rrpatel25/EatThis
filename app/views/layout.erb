@@ -16,30 +16,31 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>EatThis</title>
 </head>
 <body>
-  <nav>
-    <ul>
+
+<nav>
+  <ul class="nav">
+    <li><a href="/">home</a></li> |
+    <!-- if there is a current user logged in, display first name, link to see visited restaurants, and a logout button -->
     <% if logged_in? %>
-      <li>
-        <form id="logout" method="post" action="/sessions">
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="submit" value="Logout" id="logout">
+      <!-- <li><a href="/users/<%= current_user.id %>"> --> <%= "Hi, " + current_user.first_name %></a></li> |
+      <li><a href="/visited_restaurants/index">my conquered restaurants</a></li> |
+      <li><form class="logout-button" method="post" action="/sessions">
+          <input type="hidden" name="_method" value="DELETE" />
+          <input type="submit" value="logout" id="logout-button">
         </form>
       </li>
-      <li><%= current_user.first_name.downcase %></li>
-
     <% else %>
-      <li><a href="/sessions/new">Login</a></li>
-      <li><a href="/users/new">Register</a></li>
+    <!-- if there is no user logged in, display a login and register link -->
+      <li><a href="/sessions/new">login</a></li> |
+      <li><a href="/users/new">register</a></li>
     <% end %>
-  </ul>
+   </ul>
 </nav>
 
-  <% if @errors %>
-    <%= erb :'_errors', locals: { errors: @errors }, layout: false %>
-  <% end %>
+<%= erb :'/_errors', layout: false %>
 
   <%= yield %>
 </body>
