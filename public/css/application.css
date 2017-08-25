@@ -92,6 +92,14 @@ nav li #logout-button {
   font-style: italic;
 }
 
+p {
+  color: #990000;
+}
+
+p a:visited{
+  color: #990000;
+}
+
 .sm-container{
   font-family: 'Concert One', cursive;
   margin: 0 auto;
