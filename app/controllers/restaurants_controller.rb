@@ -6,7 +6,7 @@ post '/restaurants' do
   @suggested_restaurant = YelpHelper.search(user_id: current_user.id)
   # store the new restaurant in VisitedRestaurant
     # done with current_user.visited_restaurants << new_restaurant
-  @new_visited_restaurant = VisitedRestaurant.new(visitor_id: current_user.id, restaurant_id: @suggested_restaurant.id)
+  @new_visited_restaurant = VisitedRestaurant.new(visitor_id: current_user.id, restaurant_id: @suggested_restaurant.restaurant_id)
   if request.xhr?
     if @new_visited_restaurant.save
       # send back the _restaurant_display of the new restaurant_info

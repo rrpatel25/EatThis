@@ -14,10 +14,16 @@ class Response
   end
 
   def filter_restaurants
-    self.restaurants.reject! { |restaurant| current_user.visited_restaurants.include?(restaurant) }
+    visited = current_user.visited_restaurants.pluck(:restaurant_id)
+    @restaurants.reject! do |restaurant|
+      visited.include?(restaurant['id'])
+    end
   end
 
   def select_restaurant
+    p "*" * 90
+    p self.restaurants
+    p "*" * 90
     @picked_restaurant = Restaurant.new(self.restaurants.sample)
   end
 

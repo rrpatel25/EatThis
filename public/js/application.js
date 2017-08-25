@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 function generateRestaurantListener() {
   $("#generator-form").on("click", function(event) {
+    $(this).prop("disabled",true);
     event.preventDefault();
     $buttonForm = $(this);
     buttonUrl = $buttonForm.attr("action");

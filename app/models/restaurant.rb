@@ -1,8 +1,8 @@
 class Restaurant
-  attr_reader :id, :name, :is_closed, :rating, :price, :address, :phone_number, :image_url
+  attr_reader :restaurant_id, :name, :is_closed, :rating, :price, :address, :phone_number, :image_url
 
   def initialize(restaurant_info = {})
-    @id = restaurant_info['id'] || nil # throw error if id is missing
+    @restaurant_id = restaurant_info['id'] || nil # throw error if id is missing
     @name = restaurant_info['name'] || "n/a"
     @is_closed = restaurant_info['is_closed']
     @rating = restaurant_info['rating'] || 'n/a'
