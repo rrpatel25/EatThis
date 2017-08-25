@@ -21,9 +21,6 @@ class Response
   end
 
   def select_restaurant
-    p "*" * 90
-    p self.restaurants
-    p "*" * 90
     @picked_restaurant = Restaurant.new(self.restaurants.sample)
   end
 

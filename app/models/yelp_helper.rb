@@ -68,8 +68,4 @@ class YelpHelper
     Response.new(response.parse, user_id).picked_restaurant
   end
 
-  def self.get(restaurant_id)
-
-  end
-
 end

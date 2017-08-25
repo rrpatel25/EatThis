@@ -4,7 +4,7 @@ describe 'yelp-helper call' do
 
 
   it "returns a yelp hash object" do
-    p YelpHelper.search
+    YelpHelper.search
     expect(YelpHelper.search).to be_kind_of(Response)
   end
 

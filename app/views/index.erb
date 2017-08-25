@@ -1,7 +1,10 @@
 <div id="main-header">
   <h1 id="eatthis-header"><a href="/">EatThis</a></h1>
-  <small id="head-bottom">We make the decision, so you don't have to</small>
-
-    <%= erb :'_restaurant_selector' %>
+  <small id="head-bottom">We make the decision, so you don't have to</small><br><br>
+    <% if logged_in? %>
+      <%= erb :'_restaurant_selector' %>
+    <% else %>
+      <p><a href="/sessions/new">Sign in for your destiny</p>
+    <% end %>
 
 </div>
