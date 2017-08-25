@@ -13,6 +13,7 @@ gem 'activerecord', '~>5.1.2'
 gem 'rake'
 gem 'bcrypt'
 gem 'yelp', require: 'yelp'
+gem 'dotenv'
 gem 'http'
 gem 'database_cleaner'
 
