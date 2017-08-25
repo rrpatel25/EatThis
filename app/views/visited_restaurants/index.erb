@@ -1,0 +1,13 @@
+<h1>RIT (rest in tummy)</h1>
+
+<% if @conquered_restaurants %>
+  <ul>
+    <% @conquered_restaurants.each do |restaurant| %>
+      <li>
+        <h3><a href="<%= restaurant.url %>"><%= restaurant.name %></a></h3><br><br>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h1>WHAT?! You haven't used the app yet? Go back home for the noms</h1>
+<% end %>
